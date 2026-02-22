@@ -19,7 +19,7 @@
 <body >
 
 <header class="bg-base-200">
-  <div class="max-w-6xl mx-auto p-4">
+  <div class="max-w-6xl p-4">
 
 <h1 class="text-4xl font-bold mb-6">
 
@@ -63,9 +63,330 @@ Job Application Tracker
 </div>
 </section>
 
+<!--tabs-->
+<section>
+   <div class="flex justify-between items-center mb-4">
+
+  <!-- Left side -->
+  <h2 class="text-2xl font-bold">
+    Available Jobs
+  </h2>
+
+  <!-- Right side -->
+  <p class="text-gray-500">
+    <span id="jobs-count">8</span> jobs
+  </p>
+
+</div>
+<div class="flex gap-4 pt-5 mb-6">
+
+<button id="all-tab" class="btn btn-primary">
+All
+</button>
+
+<button id="interview-tab" class="btn">
+Interview
+</button>
+
+<button id="rejected-tab" class="btn">
+Rejected
+</button>
+</div>
+</section>
+
+<!--job-->
+<section class="bg-base-200 min-h-screen p-6">
+
+  <!-- Job Container -->
+  <div id="job-container" class="grid sm:grid-cols-2 gap-6">
+
+    <section class="bg-base-200 min-h-screen p-6">
+
+  <!-- Header -->
+  <div class="flex justify-between items-center mb-6">
+
+    <h1 class="text-2xl font-bold">
+      Available Jobs
+    </h1>
+
+    <p class="text-gray-500 font-semibold">
+      8 Jobs
+    </p>
+
+  </div>
+
+
+  <!-- Job Container -->
+  <div id="job-container" class="grid md:grid-cols-2 gap-6">
+
+
+    <!-- Card 1 -->
+    <div class="card bg-white shadow job-card" data-status="none">
+      <div class="card-body">
+
+        <h2 class="card-title">Google</h2>
+
+        <p class="text-gray-500">Frontend Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          USA • Full-time • $100k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
 
 
 
+    <!-- Card 2 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Microsoft</h2>
+
+        <p class="text-gray-500">Software Engineer</p>
+
+        <p class="text-gray-400 text-sm">
+          Canada • Full-time • $120k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 3 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Facebook</h2>
+
+        <p class="text-gray-500">React Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          Remote • $110k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 4 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Amazon</h2>
+
+        <p class="text-gray-500">Backend Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          UK • $130k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 5 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Netflix</h2>
+
+        <p class="text-gray-500">Full Stack Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          USA • $140k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 6 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Tesla</h2>
+
+        <p class="text-gray-500">Software Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          Germany • $150k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 7 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Apple</h2>
+
+        <p class="text-gray-500">iOS Developer</p>
+
+        <p class="text-gray-400 text-sm">
+          USA • $160k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Card 8 -->
+    <div class="card bg-white shadow job-card">
+      <div class="card-body">
+
+        <h2 class="card-title">Adobe</h2>
+
+        <p class="text-gray-500">UI UX Designer</p>
+
+        <p class="text-gray-400 text-sm">
+          Remote • $115k
+        </p>
+
+        <div class="card-actions justify-end mt-4">
+
+          <button class="btn btn-success btn-sm">
+            Interview
+          </button>
+
+          <button class="btn btn-error btn-sm">
+            Rejected
+          </button>
+
+          <button class="btn btn-ghost btn-sm">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+</section>
 
 
 
