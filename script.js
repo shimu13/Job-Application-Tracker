@@ -1,210 +1,107 @@
+// ===== SELECT ELEMENTS =====
 
+const jobCards = document.querySelectorAll(".job-card");
 
+const totalCount = document.getElementById("total-count");
+const interviewCount = document.getElementById("interview-count");
+const rejectedCount = document.getElementById("rejected-count");
+const jobsCount = document.getElementById("jobs-count");
 
-card.dataset.status="none";
+const allTab = document.getElementById("all-tab");
+const interviewTab = document.getElementById("interview-tab");
+const rejectedTab = document.getElementById("rejected-tab");
 
+const jobContainer = document.getElementById("job-container");
 
-}
 
+// ===== INITIAL COUNT =====
 
-else{
+updateDashboard();
 
+// ===== BUTTON EVENTS =====
 
-if(status==="rejected") rejected--;
+jobCards.forEach(card => {
 
+    const interviewBtn = card.children[0].querySelector(".btn-success");
+    const rejectedBtn = card.children[0].querySelector(".btn-error");
+    const deleteBtn = card.children[0].querySelector(".btn-ghost");
 
-interview++;
 
+    // INTERVIEW CLICK
+    interviewBtn.addEventListener("click", function(){
 
-card.dataset.status="interview";
+        card.dataset.status = "interview";
 
+        updateDashboard();
 
-}
+    });
+     // REJECTED CLICK
+    rejectedBtn.addEventListener("click", function(){
 
+        card.dataset.status = "rejected";
 
-update();
+        updateDashboard();
 
+    });
 
-}
 
+    // DELETE CLICK
+    deleteBtn.addEventListener("click", function(){
 
+        card.remove();
 
+        updateDashboard();
 
-if(e.target.classList.contains("rejected-btn")){
-
-
-const card=e.target.closest(".job-card");
-
-
-const status=card.dataset.status;
-
-
-
-if(status==="rejected"){
-
-
-rejected--;
-
-
-card.dataset.status="none";
-
-
-}
-
-
-else{
-
-
-if(status==="interview") interview--;
-
-
-rejected++;
-
-
-card.dataset.status="rejected";
-
-
-}
-
-
-update();
-
-
-}
-
-
-
-
-if(e.target.classList.contains("delete-btn")){
-
-
-const card=e.target.closest(".job-card");
-
-
-const status=card.dataset.status;
-
-
-
-if(status==="interview") interview--;
-
-
-if(status==="rejected") rejected--;
-
-
-
-card.remove();
-
-
-update();
-
-
-}
-
-
+    });
 
 });
 
 
 
 
-function update(){
 
 
 
-interviewText.innerText=interview;
+// SHOW CARDS
+
+function showCards(type){
+
+    const cards = document.querySelectorAll(".job-card");
+
+    let visibleCount = 0;
 
 
-rejectedText.innerText=rejected;
+    cards.forEach(card => {
+
+        if(type === "all"){
+
+            card.style.display = "block";
+
+            visibleCount++;
+
+        }
+
+        else if(card.dataset.status === type){
+
+            card.style.display = "block";
+
+            visibleCount++;
+
+        }
+
+        else{
+
+            card.style.display = "none";
+
+        }
+
+    });
 
 
-totalText.innerText=document.querySelectorAll(".job-card").length;
-
-
-
-}
-
-
-
-
-
-
-// tabs
-
-
-
-
-document.getElementById("all-tab").onclick=()=>show("all");
-
-
-document.getElementById("interview-tab").onclick=()=>show("interview");
-
-
-document.getElementById("rejected-tab").onclick=()=>show("rejected");
-
-
-
-
-
-function show(type){
-
-
-const cards=document.querySelectorAll(".job-card");
-
-
-let visible=0;
-
-
-
-cards.forEach(card=>{
-
-
-if(type==="all"){
-
-
-card.style.display="block";
-
-
-visible++;
-
+    showEmptyMessage(visibleCount);
 
 }
 
 
-else{
 
 
-if(card.dataset.status===type){
-
-
-card.style.display="block";
-
-
-visible++;
-
-
-}
-
-
-else{
-
-
-card.style.display="none";
-
-
-}
-
-
-}
-
-
-});
-
-
-
-document.getElementById("empty")
-
-.style.display=visible?"none":"block";
-
-
-
-}
