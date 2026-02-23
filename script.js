@@ -18,6 +18,7 @@ const jobContainer = document.getElementById("job-container");
 
 updateDashboard();
 
+
 // ===== BUTTON EVENTS =====
 
 jobCards.forEach(card => {
@@ -35,7 +36,9 @@ jobCards.forEach(card => {
         updateDashboard();
 
     });
-     // REJECTED CLICK
+
+
+    // REJECTED CLICK
     rejectedBtn.addEventListener("click", function(){
 
         card.dataset.status = "rejected";
@@ -58,7 +61,71 @@ jobCards.forEach(card => {
 
 
 
+// ===== TAB FUNCTION =====
 
+
+// ALL TAB
+
+allTab.addEventListener("click", function(){
+
+    setActiveTab(allTab);
+
+    showCards("all");
+
+});
+
+
+
+// INTERVIEW TAB
+
+interviewTab.addEventListener("click", function(){
+
+    setActiveTab(interviewTab);
+
+    showCards("interview");
+
+});
+
+
+
+// REJECTED TAB
+
+rejectedTab.addEventListener("click", function(){
+
+    setActiveTab(rejectedTab);
+
+    showCards("rejected");
+
+});
+
+
+
+
+// ===== FUNCTIONS =====
+
+
+
+// UPDATE DASHBOARD
+
+function updateDashboard(){
+
+    const allCards = document.querySelectorAll(".job-card");
+
+    const interviewCards = document.querySelectorAll('[data-status="interview"]');
+
+    const rejectedCards = document.querySelectorAll('[data-status="rejected"]');
+
+
+
+    totalCount.innerText = allCards.length;
+
+    interviewCount.innerText = interviewCards.length;
+
+    rejectedCount.innerText = rejectedCards.length;
+
+    jobsCount.innerText = allCards.length;
+
+}
 
 
 
@@ -104,4 +171,61 @@ function showCards(type){
 
 
 
+// ACTIVE TAB STYLE
 
+function setActiveTab(active){
+
+    allTab.classList.remove("btn-primary");
+    interviewTab.classList.remove("btn-primary");
+    rejectedTab.classList.remove("btn-primary");
+
+    active.classList.add("btn-primary");
+
+}
+
+
+
+// NO JOB MESSAGE
+
+function showEmptyMessage(count){
+
+    const oldMsg = document.getElementById("empty-msg");
+
+    if(oldMsg){
+
+        oldMsg.remove();
+
+    }
+
+
+    if(count === 0){
+
+        const div = document.createElement("div");
+
+        div.id = "empty-msg";
+
+        div.className = "text-center col-span-full mt-10";
+
+
+        div.innerHTML = `
+
+        <h2 class="text-xl font-bold">
+
+        No Jobs Available
+
+        </h2>
+
+        <p class="text-gray-400">
+
+        Please check other tabs
+
+        </p>
+
+        `;
+
+
+        jobContainer.appendChild(div);
+
+    }
+
+}
