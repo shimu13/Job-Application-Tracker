@@ -19,20 +19,42 @@
 <body >
 
 <header class="bg-base-200">
-  <div class="max-w-6xl p-4">
+  <div class="max-w-6xl p-4 flex justify-between items-center">
 
-<h1 class="text-4xl font-bold text-gray-200 mb-6">
+    <h1 class="text-4xl font-bold">
+      Job Application Tracker
+    </h1>
 
-Job Application Tracker
+    <!-- ✅ Theme toggle here -->
+    <label class="flex cursor-pointer gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2">
 
-</h1>
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2" />
 
-  </div> 
+      </svg>
 
+      <input type="checkbox"
+      value="synthwave"
+      class="toggle theme-controller" />
+
+      <svg xmlns="http://www.w3.org/2000/svg"
+      width="20" height="20" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2">
+
+      <path d="M21 12.79A9 9 0 1 1 11.21 3" />
+
+      </svg>
+
+    </label>
+
+  </div>
 </header>
    <!-- Dashboard -->
 <section >
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
        <div class="card bg-white shadow">
           <div class="card-body">
    <h2 class="text-gray-700">Total Jobs</h2>
@@ -65,15 +87,15 @@ Job Application Tracker
 
 <!--tabs-->
 <section>
-   <div class="flex justify-between items-center mb-4">
+   <div class="flex flex-col sm:flex-row justify-between items-center mb-4">
 
-  <!-- Left side -->
+  <!-- Left -->
   <h2 class="text-2xl font-bold">
     Available Jobs
   </h2>
 
-  <!-- Right side -->
-  <p class="text-gray-500">
+  <!-- Right -->
+  <p class="text-gray-500 w-full sm:w-auto justify-between justify-items-end ">
     <span id="jobs-count">8</span> jobs
   </p>
 
